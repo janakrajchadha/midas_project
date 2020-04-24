@@ -1,7 +1,6 @@
 absl-py==0.9.0
 astor==0.8.1
 bleach==1.5.0
-blis==0.4.1
 cachetools==4.1.0
 catalogue==1.0.0
 certifi==2020.4.5.1
@@ -19,7 +18,6 @@ Flask-Bootstrap==3.3.7.1
 Flask-WTF==0.14.3
 future==0.18.2
 gast==0.2.2
-grpcio==1.28.1
 h5py==2.10.0
 html5lib==0.9999999
 idna==2.9
@@ -78,7 +76,6 @@ simplegeneric==0.8.1
 six==1.14.0
 spacy==2.2.4
 srsly==1.0.2
-tensorboard==2.1.1
 tensorflow==2.1.0
 tensorflow-estimator==2.1.0
 tensorflow-hub==0.8.0
@@ -99,6 +96,5 @@ wincertstore==0.2
 wordcloud==1.6.0
 wrapt==1.12.1
 WTForms==2.3.1
-xgboost==1.0.2
 xlrd==1.2.0
 zipp==3.1.0
