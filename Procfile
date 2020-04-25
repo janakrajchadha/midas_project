@@ -1,1 +1,1 @@
-web: Flask app:reddit_classifier_app
+web: gunicorn reddit_classifier_app:app

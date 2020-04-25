@@ -1,6 +1,7 @@
 Flask==1.1.2
 Flask-Bootstrap==3.3.7.1
 Flask-WTF==0.14.3
+gunicorn==20.0.4
 h5py==2.10.0
 html5lib==0.9999999
 Keras-Applications==1.0.8
@@ -18,9 +19,9 @@ scikit-learn==0.22.2.post1
 scipy==1.4.1
 spacy==2.2.4
 srsly==1.0.2
-tensorflow==1.17.0
+tensorflow==2.0.0
 tqdm==4.45.0
 urllib3==1.25.9
 wordcloud==1.6.0
 WTForms==2.3.1
-
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz#egg=en_core_web_sm
