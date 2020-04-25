@@ -34,7 +34,7 @@ with open('tokenizer.pickle', 'rb') as handle:
 
 def preprocess_text(inp_text):
    
-    sp = spacy.load('en')
+    sp = spacy.load('en_core_web_sm')
     all_stopwords = sp.Defaults.stop_words
     table = str.maketrans('', '', string.punctuation)
     url_regex = r'(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*))'
@@ -59,8 +59,16 @@ encoder.classes_ = np.load(encoder_file, allow_pickle=True)
 
 def flair_predictor(url):
         submission = reddit.submission(url=url)
-        comments  = [comment.body for comment in submission.comments.list()[:5]]
+        comments_list = submission.comments.list()
+        comments  = [comment.body for comment in comments_list[:min(5, len(comments_list))]]
         comments_text = ' '.join(comments)
+        submission_title = submission.title
+        if submission_title == None:
+            submission_title = ''
+        submission_title_text = submission.selftext
+        if submission_title_text == None:
+            submission_title_text = ''
+        comments_text += ' ' + submission_title + ' ' + submission_title_text
         cleaned_comments_text = preprocess_text(comments_text).values[0]
         cleaned_comments_text_seq = tokenizer.texts_to_sequences([cleaned_comments_text])
         cleaned_comments_text_pad = sequence.pad_sequences(cleaned_comments_text_seq, maxlen=60)
@@ -80,8 +88,16 @@ def predict_flair():
         url = page.url.data
         page.url.data = ""
         submission = reddit.submission(url=url)
-        comments  = [comment.body for comment in submission.comments.list()[:5]]
+        comments_list = submission.comments.list()
+        comments  = [comment.body for comment in comments_list[:min(5, len(comments_list))]]
         comments_text = ' '.join(comments)
+        submission_title = submission.title
+        if submission_title == None:
+            submission_title = ''
+        submission_title_text = submission.selftext
+        if submission_title_text == None:
+            submission_title_text = ''
+        comments_text += ' ' + submission_title + ' ' + submission_title_text
         cleaned_comments_text = preprocess_text(comments_text).values[0]
         cleaned_comments_text_seq = tokenizer.texts_to_sequences([cleaned_comments_text])
         cleaned_comments_text_pad = sequence.pad_sequences(cleaned_comments_text_seq, maxlen=60)
