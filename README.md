@@ -13,6 +13,7 @@ For the remaining parts, the app has been created and deployed to heroku
 
 4. [Task 4- Web app for flair prediction](reddit_classifier_app.py)
 5. [Heroku App](https://rindia-flair-predictor.herokuapp.com/)
+6. [Automated testing point](https://rindia-flair-predictor.herokuapp.com/automated_testing)
 
 # To run this project locally
 
