@@ -19,7 +19,7 @@ scikit-learn==0.22.2.post1
 scipy==1.4.1
 spacy==2.2.4
 srsly==1.0.2
-tensorflow==2.0.0
+tensorflow==2.0.1
 tqdm==4.45.0
 urllib3==1.25.9
 wordcloud==1.6.0
