@@ -18,7 +18,7 @@ For the remaining parts, the app has been created and deployed to heroku
 # To run this project locally
 
 1. Clone the repository
-2. Add your reddit app credentials to 'config.json'
-3. Run 'pip install -r requirements.txt'
-3. Run 'python reddit_classifier_app.py'
+2. Add your reddit app credentials to `config.json`
+3. Run `pip install -r requirements.txt`
+3. Run `python reddit_classifier_app.py`
 
